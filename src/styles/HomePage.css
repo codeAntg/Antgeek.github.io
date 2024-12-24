@@ -1,0 +1,14 @@
+.homepage-banner {
+    background-image: url(../../public/images/background/02-background-mountain.jpg);
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    color: #fff;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.homepage-banner div {
+    font-size: 50px;
+}

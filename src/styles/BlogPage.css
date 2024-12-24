@@ -1,0 +1,65 @@
+/* 导航栏样式 */
+nav {
+    display: flex;
+    justify-content: flex-end;
+    background-color: #f8f8f8;
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    margin-left: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+/* 标题背景样式 */
+header {
+    background-image: url(../../public/images/background.jpg);
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+header h1 {
+    font-size: 48px;
+    font-weight: bold;
+}
+
+/* 文章列表样式 */
+.article-list {
+    padding: 20px;
+}
+
+.article {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+.article h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.article p {
+    color: #888;
+    font-size: 14px;
+}
