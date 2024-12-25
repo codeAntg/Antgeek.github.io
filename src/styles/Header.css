@@ -1,10 +1,31 @@
+.header-content {
+    height: 95px;
+    display: flex;
+    flex-direction: row;
+    padding: 0 10%;
+}
+
 .h-left{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.h-left-logo {
+    height: 100%;
+    width: 50%;
     aspect-ratio: 1/1; /*保证始终是正方形*/
-    background-image: url("../../public/logo.png");
-    background-size: cover;
+    background-size: 50%;
     background-position: center;
-    border-radius: 50%;
-    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.2);
+    background-repeat: no-repeat;
+    margin-right: -30px;
+}
+
+.h-left-text {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    margin-left: 0px;
 }
 .h-left a{
     display: block;
@@ -30,6 +51,12 @@
     background: none;
     border: none;
     font-size: 20px;
+    font-weight: bold;
+    color: white;
+}
+
+.h-middle>ul>li:hover {
+    cursor: pointer;
 }
 
 .h-right {
@@ -37,4 +64,79 @@
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+}
+
+.desktop-menu {
+    display: flex;
+}
+
+.mobile-menu-button {
+    display: none;
+}
+
+.mobile-menu-button:hover {
+    background: transparent !important; /*去掉hover效果*/
+}
+
+.h-mobile-menu {
+    display: none;
+}
+
+
+
+@media (max-width: 768px) {
+    .desktop-menu {
+        display: none;
+    }
+
+    .mobile-menu-button {
+        background: transparent;
+        border: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 50%;
+        height: 50%;
+        font-size: 50px;
+        padding: 0;
+        cursor: pointer;
+        color: white;
+        box-shadow: none;
+    }
+
+    .h-middle {
+        display: none;
+    }
+
+    .h-right {
+        display: none;
+    }
+
+    .h-mobile-menu {
+        display: flex;
+        width: 80%;
+        align-items: center;
+    }
+    .header-content {
+        height: 95px;
+        display: flex;
+        flex-direction: row;
+        padding: 0 0;
+
+    }
+
+    .mobile-menu-button {
+        margin-left: auto;
+    }
+
+    .h-mobile-menu-nav {
+        font-size: 20px;
+        font-weight: bold;
+        color: black;
+    }
+
+    .h-mobile-menu-nav>p:hover {
+        cursor: pointer;
+    }
+
 }

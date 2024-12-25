@@ -3,15 +3,14 @@ import { Flex, Layout } from 'antd';
 import CommonHeader from "../components/CommonHeader";
 import CommonFooter from "../components/CommonFooter";
 import '../styles/HomePage.css'
-import {homepage_text} from "../common/GlobleConfig"
 
 const { Content } = Layout;
 
 
 const layoutStyle = {
     overflow: 'hidden',
-    width: 'calc(100% - 8px)',
-    maxWidth: 'calc(100% - 8px)',
+    width: '100vw',
+    maxWidth: '100vw',
 };
 
 interface HomePageProps {
@@ -19,13 +18,18 @@ interface HomePageProps {
 }
 
 const HomePage: React.FC<HomePageProps> = ({}) => {
-
     return (
         <Flex gap="middle" wrap>
             <Layout style={layoutStyle}>
                 <CommonHeader />
                 <Layout>
-                    <Content className={"homepage-banner"} ><div>{homepage_text}</div></Content>
+                    <Content className={"homepage-banner"}>
+                        <div>
+                            <p>LIVE AND LEARN</p>
+                            <p style={{fontSize: 30}}>antgeek's blog</p>
+                        </div>
+                    </Content>
+                    {/*<Content className={"homepage-content-1"}></Content>*/}
                 </Layout>
                 <CommonFooter />
             </Layout>
