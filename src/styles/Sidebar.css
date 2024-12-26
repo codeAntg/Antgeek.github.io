@@ -1,0 +1,47 @@
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    background: none;
+    margin-top: 20px;
+}
+
+.sidebar-section {
+    margin-top: 0px;
+    margin-bottom: 20px; /* Add margin to separate sections */
+    padding: 20px;
+    background: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sidebar-section h3 {
+    margin: 0;
+    font-size: 20px;
+    color: #333;
+}
+
+.sidebar-section p, .sidebar-section ul {
+    margin: 10px 0;
+    color: #666;
+}
+
+.sidebar-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar-section ul li {
+    margin: 5px 0;
+}
+
+.sidebar-section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        display: none;
+    }
+}

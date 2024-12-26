@@ -7,7 +7,7 @@ const footerStyle: React.CSSProperties = {
     color: 'black',
     backgroundColor: '#f3f3f3',
 };
-const CommonFooter: React.FC = () => {
+const BlogFooter: React.FC = () => {
     return (
         <Footer style={footerStyle}>
             Copyright by <a href={URL.github} target="_blank">Antgeek</a>
@@ -15,4 +15,4 @@ const CommonFooter: React.FC = () => {
     );
 };
 
-export default CommonFooter;
+export default BlogFooter;

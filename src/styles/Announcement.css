@@ -1,0 +1,25 @@
+.sidebar-section {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.title-bar {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.title-icon {
+    font-size: 24px;
+    margin-right: 10px;
+}
+
+.title-text {
+    font-size: 15px;
+    margin: 0;
+}
+
+.sidebar-section p {
+    margin: 0;
+    color: #666;
+}

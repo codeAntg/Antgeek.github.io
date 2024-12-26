@@ -1,8 +1,11 @@
 import React,{ useEffect, useState } from 'react';
 import { Flex, Layout } from 'antd';
-import CommonHeader from "../components/CommonHeader";
-import CommonFooter from "../components/CommonFooter";
+import BlogHeader from "../components/BlogHeader";
+import BlogFooter from "../components/BlogFooter";
 import '../styles/HomePage.css'
+import BlogList from "../components/BlogList";
+import Sidebar from "../components/Sidebar";
+import BackToTopButton from '../components/BackToTopButton';
 
 const { Content } = Layout;
 
@@ -21,7 +24,7 @@ const HomePage: React.FC<HomePageProps> = ({}) => {
     return (
         <Flex gap="middle" wrap>
             <Layout style={layoutStyle}>
-                <CommonHeader />
+                <BlogHeader />
                 <Layout>
                     <Content className={"homepage-banner"}>
                         <div>
@@ -29,9 +32,15 @@ const HomePage: React.FC<HomePageProps> = ({}) => {
                             <p style={{fontSize: 19}}>antgeek's blog</p>
                         </div>
                     </Content>
-                    {/*<Content className={"homepage-content-1"}></Content>*/}
+                    <Content className={"homepage-content"}>
+                        <div className="content-container">
+                            <BlogList />
+                            <Sidebar />
+                        </div>
+                    </Content>
                 </Layout>
-                <CommonFooter />
+                <BackToTopButton />
+                <BlogFooter />
             </Layout>
         </Flex>
     );

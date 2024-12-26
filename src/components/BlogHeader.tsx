@@ -2,13 +2,16 @@ import React,{ useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Layout, Drawer, Button } from 'antd';
 import { MenuOutlined,GithubOutlined,GlobalOutlined } from '@ant-design/icons';
-import '../styles/Header.css'
+import '../styles/BlogHeader.css'
 import {URL} from '../common/GlobleConfig'
 
 const { Header, Content} = Layout;
 
+interface BlogHeaderProps {
+    colorChaneFlag?: boolean; // 是否需要改变颜色 默认为true
+}
 
-const CommonHeader: React.FC = () => {
+const BlogHeader: React.FC<BlogHeaderProps> = ({colorChaneFlag = true}) => {
     const [scrollPosition, setScrollPosition] = useState(0);
     const [drawerVisible, setDrawerVisible] = useState(false);
     const [language, setLanguage] = useState('en');
@@ -20,16 +23,17 @@ const CommonHeader: React.FC = () => {
             color: '#f000',
             height: 95,
             width: '100vw',
-            backgroundColor: scrollPosition>10 ? 'white' : 'transparent',
-            boxShadow: scrollPosition>10 ? '0 2px 8px rgba(0,0,0,0.06)' : 'none',
+            backgroundColor: colorChaneFlag ? (scrollPosition>10 ? 'white' : 'transparent') : 'white',
+            boxShadow: colorChaneFlag ? (scrollPosition>10 ? '0 2px 8px rgba(0,0,0,0.06)' : 'none') : '0 2px 8px rgba(0,0,0,0.06)',
             transition: 'background-color 0.5s ease, box-shadow 0.5s ease',
+            zIndex: 1000,
         };
     // 导航栏字体颜色
     const navFontStyle: React.CSSProperties = {
-        color: scrollPosition>0? 'black' : 'white',
+        color: colorChaneFlag ? (scrollPosition>0? 'black' : 'white') : "black",
     }
     // logo图片
-    const logoImage = (scrollPosition > 0 ? 'logo.png' : 'logo-white.png');
+    const logoImage = colorChaneFlag ? (scrollPosition > 0 ? 'logo.png' : 'logo-white.png') : 'logo.png';
     // 监听滚动事件
     useEffect(() => {
         const handleScroll = () => {
@@ -79,7 +83,7 @@ const CommonHeader: React.FC = () => {
                     </div>
                     <div
                         className={"h-left-text"}
-                        style={{ marginLeft: '10px', fontSize: '24px', color: scrollPosition > 0 ? 'black' : 'white' }}>
+                        style={{ marginLeft: '10px', fontSize: '24px', color: colorChaneFlag ? (scrollPosition > 0 ? 'black' : 'white') : 'black' }}>
                         Antgeek
                     </div>
                 </Content>
@@ -92,7 +96,7 @@ const CommonHeader: React.FC = () => {
                 </Content>
                 {/*移动端导航栏*/}
                 <Content className={"h-mobile-menu"}>
-                    <Button size={"large"} className={"mobile-menu-button"} style={{color: `${scrollPosition > 0 ? 'black' : 'white'}`}} type="primary" icon={<MenuOutlined />} onClick={showDrawer} />
+                    <Button size={"large"} className={"mobile-menu-button"} style={{color: `${colorChaneFlag ? (scrollPosition > 0 ? 'black' : 'white') : 'black'}`}} type="primary" icon={<MenuOutlined />} onClick={showDrawer} />
                     <Drawer
                         title="导航"
                         placement="right"
@@ -134,4 +138,4 @@ const CommonHeader: React.FC = () => {
     );
 };
 
-export default CommonHeader;
+export default BlogHeader;

@@ -18,15 +18,38 @@
 .homepage-banner>div>p {
     margin: 5% 0;
 }
+.homepage-content {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
 
-.homepage-content-1 {
-    width: 100vw;
-    height: 200vh;
-    background-color: dodgerblue;
+.content-container {
+    display: flex;
+    gap: 20px;
+    width: 80vw;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.blog-list {
+    flex: 3;
+}
+
+.sidebar {
+    flex: 1;
 }
 
 @media (max-width: 768px) {
     .homepage-banner {
         background-attachment: scroll;
+    }
+
+    .homepage-content {
+        margin-top: 2vh;
+    }
+
+    .content-container {
+        width: 95vw;
     }
 }
