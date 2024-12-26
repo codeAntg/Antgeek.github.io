@@ -25,8 +25,8 @@ const HomePage: React.FC<HomePageProps> = ({}) => {
                 <Layout>
                     <Content className={"homepage-banner"}>
                         <div>
-                            <p>LIVE AND LEARN</p>
-                            <p style={{fontSize: 30}}>antgeek's blog</p>
+                            <p style={{fontSize: 28}}>LIVE AND LEARN</p>
+                            <p style={{fontSize: 19}}>antgeek's blog</p>
                         </div>
                     </Content>
                     {/*<Content className={"homepage-content-1"}></Content>*/}

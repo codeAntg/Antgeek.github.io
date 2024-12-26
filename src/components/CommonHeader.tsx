@@ -90,6 +90,7 @@ const CommonHeader: React.FC = () => {
                         <li style={navFontStyle}>关于我</li>
                     </ul>
                 </Content>
+                {/*移动端导航栏*/}
                 <Content className={"h-mobile-menu"}>
                     <Button size={"large"} className={"mobile-menu-button"} style={{color: `${scrollPosition > 0 ? 'black' : 'white'}`}} type="primary" icon={<MenuOutlined />} onClick={showDrawer} />
                     <Drawer
@@ -104,12 +105,12 @@ const CommonHeader: React.FC = () => {
                         </div>
                         <br/><br/><br/><br/>
                         <Button
-                            icon={<GithubOutlined style={{ fontSize: '24px', margin: 0, padding: 0 }} />}
+                            icon={<GithubOutlined style={{ fontSize: '18px', margin: 0, padding: 0 }} />}
                             onClick={handleGithubClick}
                             style={{ marginLeft: '10px', border: 'none', background: 'none',margin: 0,padding: 0 }}
                         />
                         <Button
-                            icon={<GlobalOutlined style={{ fontSize: '24px', margin: 0, padding: 0 }} />}
+                            icon={<GlobalOutlined style={{ fontSize: '18px', margin: 0, padding: 0 }} />}
                             onClick={toggleLanguage}
                             style={{ marginLeft: '10px', border: 'none', background: 'none',margin: 0,padding: 0 }}
                         />
