@@ -6,6 +6,7 @@ import '../styles/BlogDetail.css';
 import ReactMarkdown from 'react-markdown';
 import BackToTopButton from "../components/BackToTopButton";
 import BlogFooter from "../components/BlogFooter";
+import Sidebar from '../components/Sidebar';
 
 const { Content } = Layout;
 const { Title, Text } = Typography;
@@ -15,7 +16,7 @@ const BlogDetail: React.FC = () => {
 
     // Fetch blog details using the id (mock data for now)
     const blog = {
-        title: 'Sample Blog Title',
+        title: '文章标题文章标题文章标题文章标题文章标题文章标题文章标题文章标题',
         date: '2023-10-01',
         tags: ['React', 'TypeScript', 'CSS'],
         column: 'Tech',
@@ -29,21 +30,21 @@ const BlogDetail: React.FC = () => {
                 <div className="blog-detail-content">
                     <Title level={1}>{blog.title}</Title>
                     <div className="blog-meta">
-                        <Text>{blog.date}</Text>
+                        <Text>发表于 : {blog.date}</Text>
                         <div>
+                            <span>标签 :  </span>
                             {blog.tags.map(tag => (
                                 <Tag key={tag}>{tag}</Tag>
                             ))}
                         </div>
-                        <Text>{blog.column}</Text>
+                        <Text>专栏 :  {blog.column}</Text>
                     </div>
                     <div className="blog-body">
                         <ReactMarkdown>{blog.content}</ReactMarkdown>
                     </div>
                 </div>
                 <div className="blog-sidebar">
-                    {/* 侧边栏内容 */}
-                    <p>Sidebar content goes here...</p>
+                    <Sidebar />
                 </div>
             </Content>
             <BackToTopButton/>
