@@ -1,0 +1,44 @@
+.about-me {
+    padding-top: 120px;
+    padding-left: 15%;
+    padding-right: 15%;
+}
+
+.self-introduction {
+    margin-bottom: 40px;
+}
+
+.achievement-wall {
+    margin-top: 40px;
+}
+
+.achievement-images {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.achievement-images img {
+    width: 100%;
+    height: auto;
+    max-width: 100px;
+    border-radius: 5px;
+}
+
+.achievement-card .ant-card-head-title {
+    white-space: normal;
+    word-wrap: break-word;
+}
+
+@media (max-width: 768px) {
+    .ant-col {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .about-me {
+        padding-top: 120px;
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+}

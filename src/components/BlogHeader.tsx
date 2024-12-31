@@ -68,6 +68,10 @@ const BlogHeader: React.FC<BlogHeaderProps> = ({colorChaneFlag = true}) => {
         setLanguage((prevLanguage) => (prevLanguage === 'en' ? 'zh' : 'en'));
     };
 
+    const handleAboutMeClick = () => {
+        navigate('/AboutMe');
+    };
+
     return (
         <Header style={headerStyle}>
             <Content className={"header-content"}>
@@ -90,8 +94,8 @@ const BlogHeader: React.FC<BlogHeaderProps> = ({colorChaneFlag = true}) => {
                 {/*导航栏*/}
                 <Content className={"h-middle"}>
                     <ul>
-                        <li style={navFontStyle}>博客</li>
-                        <li style={navFontStyle}>关于我</li>
+                        <li style={navFontStyle} onClick={handleLogoClick}>博客</li>
+                        <li style={navFontStyle} onClick={handleAboutMeClick}>关于我</li>
                     </ul>
                 </Content>
                 {/*移动端导航栏*/}
@@ -104,8 +108,8 @@ const BlogHeader: React.FC<BlogHeaderProps> = ({colorChaneFlag = true}) => {
                         open={drawerVisible}
                     >
                         <div className={"h-mobile-menu-nav"}>
-                            <p>博客</p>
-                            <p>关于我</p>
+                            <p onClick={handleLogoClick}>博客</p>
+                            <p onClick={handleAboutMeClick}>关于我</p>
                         </div>
                         <br/><br/><br/><br/>
                         <Button
