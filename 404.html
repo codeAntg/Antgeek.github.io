@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta http-equiv="refresh" content="0; URL=/" />
+    <meta charset="UTF-8">
+    <title>Page Not Found</title>
     <script type="text/javascript">
-        // 重定向到 index.html
-        var path = window.location.pathname;
-        var newPath = path.replace(/\/[^\/]*$/, '/');
-        window.location.replace(newPath);
+        // Preserve the path and redirect to index.html
+        var redirectTo = window.location.pathname + window.location.search + window.location.hash;
+        sessionStorage.setItem('redirectTo', redirectTo);
+        window.location.replace('/');
     </script>
 </head>
 <body>
