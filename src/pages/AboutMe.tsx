@@ -102,6 +102,15 @@ const AboutMe: React.FC = () => {
                                         <Col key={index} span={8}>
                                             <Card className="achievement-card" title={
                                                 <span>{item.emoji} {item.title}</span>} bordered={false}>
+                                                <div>
+                                                    {item.tags && item.tags.map((tag, idx) => (
+                                                        <Tag key={idx} color={getTagColor(tag)}
+                                                             bordered={false}>{tag}</Tag>
+                                                    ))}
+                                                </div>
+                                                <p>
+                                                    <CalendarOutlined/> {item.date}
+                                                </p>
                                                 <ReactMarkdown>{item.description}</ReactMarkdown>
                                                 {item.images && item.images.length > 0 && (
                                                     <div className="achievement-images">
@@ -111,15 +120,7 @@ const AboutMe: React.FC = () => {
                                                         ))}
                                                     </div>
                                                 )}
-                                                <p>
-                                                    <CalendarOutlined/> {item.date}
-                                                </p>
-                                                <div>
-                                                    {item.tags && item.tags.map((tag, idx) => (
-                                                        <Tag key={idx} color={getTagColor(tag)}
-                                                             bordered={false}>{tag}</Tag>
-                                                    ))}
-                                                </div>
+
 
                                             </Card>
                                         </Col>
