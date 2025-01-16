@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Page Not Found</title>
+    <script type="text/javascript">
+        // Preserve the path and redirect to index.html
+        var redirectTo = window.location.pathname + window.location.search + window.location.hash;
+        sessionStorage.setItem('redirectTo', redirectTo);
+        window.location.replace('/');
+    </script>
+</head>
+<body>
+</body>
+</html>
